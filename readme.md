@@ -10,3 +10,8 @@
 6. jalanin `git add .`
 7. jalanin `git commit -m '<pesan>'`
 8. jalanin `git push -u origin <branch>`
+
+## Optional / Saran / Catatan
+
+Mengganti Branch
+`git branch -M main`
