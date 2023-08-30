@@ -1,6 +1,6 @@
 {
   "name": "ppqita-practices",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "latihan siswa kelas 2 ppqita",
   "main": "app.js",
   "scripts": {
@@ -17,4 +17,3 @@
     "express": "^4.18.2"
   }
 }
-
