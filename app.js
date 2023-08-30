@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.json());
+app.use(express.json()); // agar support json
 /**
  * req adalah singkatan dari request yg isi yg dikirimkan oleh client.
  * contoh seperti body, parameter, query
@@ -15,10 +15,9 @@ app.get('/', (req, res) => {
 
 // membuat data
 app.post('/', (req, res) => {
-  console.log(req.body);
-  let name = req.body.name;
+  let name = req.body.name; // mengambil data name
 
-  res.send('Assalamualaikum kak ' + name);
+  res.send('Assalamualaikum kak ' + name); // implementasi data
 });
 
 // update data
