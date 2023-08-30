@@ -9,7 +9,7 @@ const app = express();
  * contoh seperti data, json, html, dan codeHTTP (default:200)
  */
 app.get('/', (req, res) => {
-  res.send('Hello World');
+  res.send('Hello World'); // yg dikirimkan ke server
 });
 
 // biar bisa running
