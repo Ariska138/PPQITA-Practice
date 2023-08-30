@@ -14,6 +14,7 @@
 4. nama folder/file sebaiknya ringkas
 5. tidak mengepush folder `node_modules`
 6. setiap versi ditandai dengan `npm version patch`
+7. sebelum menjalankan `npm run start` sebaiknya menjalakan `npm run test` jika ada yg mengubah logika pada fungsi tersebut tetapi jika tidak mengubah maka langung jalankan `npm run start`
 
 # Tutorial
 
