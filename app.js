@@ -2,6 +2,7 @@ const express = require('express');
 
 const app = express();
 
+app.use(express.json());
 /**
  * req adalah singkatan dari request yg isi yg dikirimkan oleh client.
  * contoh seperti body, parameter, query
@@ -14,7 +15,10 @@ app.get('/', (req, res) => {
 
 // membuat data
 app.post('/', (req, res) => {
-  res.send('post data');
+  console.log(req.body);
+  let name = req.body.name;
+
+  res.send('Assalamualaikum kak ' + name);
 });
 
 // update data
