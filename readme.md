@@ -15,3 +15,7 @@
 
 Mengganti Branch
 `git branch -M main`
+
+## Doc
+
+https://s.id/ppqita
