@@ -1,3 +1,13 @@
+# Instalasi Server
+
+# Aturan
+
+1. pastikan semua latihan di project ini
+2. nama folder dengan huruf kecil semua. pemisah menggunakan `_`
+3. nama folder harus menggambarkan isinya
+4. nama folder/file sebaiknya ringkas
+5. tidak mengepush folder `node_modules`
+
 # Tutorial
 
 1. Buat Repo di Github
@@ -15,6 +25,12 @@
 
 Mengganti Branch
 `git branch -M main`
+
+Menghapus file
+`git rm file_yang_ingin_dihapus.txt`
+
+Menghapus folder
+`git rm -r folder_yang_ingin_dihapus`
 
 ## Doc
 
