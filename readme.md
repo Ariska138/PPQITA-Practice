@@ -1,9 +1,10 @@
 # Instalasi Server
 
-1. install express di terminal `npm i express`
-2. buat file dengan nama `app.js`. jika sudah ada, abaikan
-3. jalanin server dengan run di terminal `node app.js`
-4. matikan server dengan `ctrl + c`
+1. init project dengan run `npm init -y`
+2. install express di terminal `npm i express`
+3. buat file dengan nama `app.js`. jika sudah ada, abaikan
+4. jalanin server dengan run di terminal `node app.js`
+5. matikan server dengan `ctrl + c`
 
 # Aturan
 

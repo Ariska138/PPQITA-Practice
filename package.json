@@ -1,13 +1,14 @@
 {
-  "name": "2.latihan_crud",
+  "name": "ppqita-practices",
   "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "latihan siswa kelas 2 ppqita",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx jest",
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ariska Hidayat",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.6.4"
@@ -16,3 +17,4 @@
     "express": "^4.18.2"
   }
 }
+
