@@ -1,5 +1,8 @@
 # Instalasi Server
 
+1. install express di terminal `npm i express`
+2. buat file dengan nama `app.js`. jika sudah ada, abaikan
+
 # Aturan
 
 1. pastikan semua latihan di project ini
