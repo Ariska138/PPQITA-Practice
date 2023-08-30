@@ -12,6 +12,7 @@
 3. nama folder harus menggambarkan isinya
 4. nama folder/file sebaiknya ringkas
 5. tidak mengepush folder `node_modules`
+6. setiap versi ditandai dengan `npm version patch`
 
 # Tutorial
 
