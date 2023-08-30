@@ -2,6 +2,8 @@
 
 1. install express di terminal `npm i express`
 2. buat file dengan nama `app.js`. jika sudah ada, abaikan
+3. jalanin server dengan run di terminal `node app.js`
+4. matikan server dengan `ctrl + c`
 
 # Aturan
 
