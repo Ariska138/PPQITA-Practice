@@ -1,4 +1,4 @@
-const { findById, updateData } = require('./CrudObjects');
+const { findById, updateData, createData } = require('./CrudObjects');
 describe('Test Crud Objects', () => {
   test('1.when create new object should success', () => {
     let bank = [];

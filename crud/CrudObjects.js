@@ -1,4 +1,7 @@
-const createData = (bank, data) => {};
+const createData = (bank, data) => {
+  bank.push(data);
+  return bank;
+};
 
 const findById = (bank, id) => {
   return bank.find((value) => value.id === id);

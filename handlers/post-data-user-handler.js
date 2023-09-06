@@ -1,3 +1,7 @@
+const {
+  savingData,
+  showAllData,
+} = require('../gateways/memory-storage-gateway');
 const { nameValidation, ageValidation } = require('../validation/validation');
 
 const postDataUserHandler = (req, res) => {
@@ -32,7 +36,9 @@ const postDataUserHandler = (req, res) => {
     return res.send(realAgeRes);
   }
 
-  res.send({ data: { name: realNameRes.data, age: realAgeRes.data } }); // @todo menambahkan data umur yg sudah divalidasi
+  savingData(realNameRes.data, realAgeRes.data); // simpan data di memori (memoryGateway)
+
+  res.send({ data: showAllData() }); // @todo menambahkan data umur yg sudah divalidasi
 };
 
 module.exports = { postDataUserHandler };

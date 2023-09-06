@@ -1,5 +1,10 @@
 const express = require('express');
 const { postDataUserHandler } = require('./handlers/post-data-user-handler');
+const { getDataUserHandler } = require('./handlers/get-data-user-handler');
+const { ubahDataUserHandler } = require('./handlers/ubah-data-user-handler');
+const {
+  deleteDataUserHandler,
+} = require('./handlers/delete-data-user-handler');
 
 const app = express();
 
@@ -10,22 +15,16 @@ app.use(express.json()); // agar support json
  * res adalah singkatan dari responss yang isinya kita kirim ke client.
  * contoh seperti data, json, html, dan codeHTTP (default:200)
  */
-app.get('/', (req, res) => {
-  res.send('Hello World'); // yg dikirimkan ke server
-});
+app.get('/', getDataUserHandler);
 
 // membuat data
 app.post('/', postDataUserHandler);
 
 // update data
-app.put('/', (req, res) => {
-  res.send('update data');
-});
+app.put('/', ubahDataUserHandler);
 
 // hapus data
-app.delete('/', (req, res) => {
-  res.send('delete data');
-});
+app.delete('/', deleteDataUserHandler);
 
 // biar bisa running
 app.listen(3000, () => {
