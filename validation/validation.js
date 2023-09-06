@@ -12,6 +12,8 @@ const nameValidation = (name) => {
   return { error: false, message: 'OK', data: name };
 };
 
-const ageValidation = (age) => {};
+const ageValidation = (age) => {
+  return age;
+};
 
 module.exports = { nameValidation };

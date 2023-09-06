@@ -1,4 +1,5 @@
 const express = require('express');
+const { nameValidation } = require('./validation/validation');
 
 const app = express();
 
@@ -15,9 +16,28 @@ app.get('/', (req, res) => {
 
 // membuat data
 app.post('/', (req, res) => {
-  let name = req.body.name; // mengambil data name
+  // mengecek properties
+  if (!req.body.name) {
+    return res.send({ error: true, message: 'tidak memiliki paramater nama' });
+  }
+  // @todo pengecekan property umur
 
-  res.send('Assalamualaikum kak ' + name); // implementasi data
+  // mengambil data nama
+  // let name = req.body.name; // mengambil data name
+  let { name } = req.body;
+  // @todo pemanggilan data umur
+
+  // melakukan validasi nama
+  let realNameRes = nameValidation(name);
+  // @todo melakukan validasi umur
+
+  if (realNameRes.error) {
+    return res.send(realNameRes);
+  }
+  // @todo lempar error umur
+  // if ...
+
+  res.send({ data: { name: realNameRes.data } }); // @todo menambahkan data umur yg sudah divalidasi
 });
 
 // update data
