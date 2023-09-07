@@ -1,5 +1,11 @@
-const { findById, updateData, createData } = require('./CrudObjects');
-describe.skip('Test Crud Objects', () => {
+const {
+  findById,
+  updateData,
+  createData,
+  deleteData,
+  findByName,
+} = require('./CrudObjects');
+describe('Test Crud Objects', () => {
   test('1.when create new object should success', () => {
     let bank = [];
     let result = createData(bank, { id: 1, name: 'samsul' });
@@ -60,5 +66,16 @@ describe.skip('Test Crud Objects', () => {
     let result = deleteData(bank, 2);
     // setelah melakukan penghapusan
     expect(result).toEqual([{ id: 1, name: 'samsul' }]);
+  });
+
+  test('6.when find a object by name should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul' },
+      { id: 2, name: 'bambang' },
+    ];
+    let result = findByName(bank, 'samsul'); // menggunakan dataArray.find((value)=>value.id === id)
+
+    // menampilkan hanya object yg dibutuhkan
+    expect(result).toEqual({ id: 1, name: 'samsul' });
   });
 });

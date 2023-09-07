@@ -15,7 +15,7 @@
   untuk update
   `curl -X PUT http://localhost:3000`
   untuk tambah data
-  `curl -X POST -H 'content-type: application/json' -d '{"name":"Ariska Hidayat"}' http://localhost:3000`
+  `curl -X POST -H 'content-type: application/json' -d '{"name":"Ariska Hidayat", "age":20}' http://localhost:3000`
   untuk delete data
   `curl -X DELETE http://localhost:3000`
 
@@ -64,7 +64,7 @@ nb:
 - pada app.js, untuk app.listen harus di export agar tidak muncul warning/error
 
 ```
-const server = app.listen()....
+const server = app.listen(....
 ....
 module.exports = server;
 
