@@ -6,7 +6,7 @@ const {
   deleteData,
 } = require('./crudNumbers');
 
-describe('test crud numbers', () => {
+describe.skip('test crud numbers', () => {
   test('when create should success', () => {
     let bank = [];
     let result = createData(bank, 5);

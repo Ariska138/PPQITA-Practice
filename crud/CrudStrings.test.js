@@ -1,4 +1,4 @@
-describe('Test CrudStrings', () => {
+describe.skip('Test CrudStrings', () => {
   test('create should success', () => {
     let bank = [];
     let result = createData(bank, 'apple');

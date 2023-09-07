@@ -26,3 +26,46 @@ node:
 - untuk data json, baik properties maupun value harus dalam tanda double kutip
 - pastikan pada `app.js` menambahkan `app.use(express.json());`
 - pastikan restart server ketika ingin melihat perubahan
+
+## test otomatis menggunakan supertest
+
+- install supertest
+  `npm i -D supertest`
+- import suppertest
+  `const request = require('supertest');`
+- import aplikasi express
+  `const app = require('./app');`
+- panggil aplikasi di supertest (contoh implementasinya)
+  `const response = await request(app).get('/');`
+- test status
+  `expect(response.status).toBe(200);`
+- test body
+  `expect(response.body).toEqual({ message: 'Hello, World!' });`
+- sendangkan untuk contoh post
+
+```
+ const data = { message: 'Test Message' };
+    const response = await request(app)
+      .post('/api/post')
+      .send(data);
+```
+
+- jangan lupa menutup server setelah selesai proses
+
+```
+afterAll(() => {
+    app.close(); // Menutup server setelah semua tes selesai
+  });
+```
+
+nb:
+
+- tidak perlu menjalankan server secara manual
+- pada app.js, untuk app.listen harus di export agar tidak muncul warning/error
+
+```
+const server = app.listen()....
+....
+module.exports = server;
+
+```

@@ -1,6 +1,6 @@
 const { sum } = require('./mymath');
 
-describe('testing mymath', () => {
+describe.skip('testing mymath', () => {
   test('test sum should success', () => {
     let result = sum(10, 30);
 

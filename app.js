@@ -27,8 +27,10 @@ app.put('/', ubahDataUserHandler);
 app.delete('/', deleteDataUserHandler);
 
 // biar bisa running
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log('Hai Dev, Servermu udah jalan di http://localhost:3000');
 });
 // jalaninnya dengan menulis node app.js di terminal
 // matikan server dengan ctrl+c
+
+module.exports = server;

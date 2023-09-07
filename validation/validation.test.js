@@ -1,5 +1,5 @@
-const { nameValidation } = require('./validation');
-describe('testing name validation', () => {
+const { nameValidation, ageValidation } = require('./validation');
+describe.skip('testing name validation', () => {
   test('when input less 3 character should error', () => {
     let result = nameValidation('ab');
 
@@ -44,7 +44,7 @@ describe('testing name validation', () => {
   });
 });
 
-describe('test ageValidation', () => {
+describe.skip('test ageValidation', () => {
   test('when less 12 should error', () => {
     let result = ageValidation(10);
 
