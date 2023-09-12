@@ -8,6 +8,8 @@ const {
 
 const app = express();
 
+app.use(express.static('public'));
+
 app.use(express.json()); // agar support json
 /**
  * req adalah singkatan dari request yg isi yg dikirimkan oleh client.
@@ -15,16 +17,16 @@ app.use(express.json()); // agar support json
  * res adalah singkatan dari responss yang isinya kita kirim ke client.
  * contoh seperti data, json, html, dan codeHTTP (default:200)
  */
-app.get('/', getDataUserHandler);
+app.get('/api/user', getDataUserHandler);
 
 // membuat data
-app.post('/', postDataUserHandler);
+app.post('/api/user', postDataUserHandler);
 
 // update data
-app.put('/', ubahDataUserHandler);
+app.put('/api/user', ubahDataUserHandler);
 
 // hapus data
-app.delete('/', deleteDataUserHandler);
+app.delete('/api/user', deleteDataUserHandler);
 
 // biar bisa running
 const server = app.listen(3000, () => {
