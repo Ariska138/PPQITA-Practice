@@ -8,7 +8,8 @@ bagaimana membuat tampilan frontend
   `app.use(express.static('public'));` 
   digunakan untuk membaca seluruh folder `public` yang terdapat di `root`
 - untuk root api ubah dari `/` menjadi `/api` atau lebih spesifik `/api/user`
-- update juga untuk `thunder client`dan `testing` sebelumnya hanya `/` atau `http://localhost:3001` menjadi `/api/user` atau `http://localhost:3001/api/user`
+- update juga untuk `thunder client` sebelumnya hanya `http://localhost:3001` menjadi  `http://localhost:3001/api/user`
+update juga untuk  `api testing` sebelumnya hanya `/`  menjadi `/api/user` 
 
 ## buat ui untuk Send data
 - menggunakan tailwind
