@@ -1,14 +1,5 @@
 # Evaluasi
 
-## ketika run test api, maka konflik pada port
-Dicari: Bagaimana agar bisa jalan dan efisient?
-Solusi 1:
-- Close server local, kemudian baru jalankan test api
-
-Solusi 2:
-- Mengubah port server local dari 3000 menjadi 3001. karena port yg digunakan oleh smartest adalah 3000.
-
-Rekomendasi: Solusi 2:
 
 ## temukan yg menjadi kendala dalam belajar/ngoding/efisiet/bingung/kurang semangat/masukkan/perbaikan/tugas/lebih optimal/lebih productif/lebih maju/lebih mudah/
 [danesh]
