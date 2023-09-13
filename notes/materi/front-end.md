@@ -7,7 +7,7 @@ bagaimana membuat tampilan frontend
 - tambahkan di app.js
   `app.use(express.static('public'));` 
   digunakan untuk membaca seluruh folder `public` yang terdapat di `root`
-- untuk root api ubah dari `/` menjadi `/api` atau lebih spesifik `/api/user`
+- pada file `app.js` untuk root api ubah dari `/` menjadi `/api` atau lebih spesifik `/api/user`
 - update juga untuk `thunder client` sebelumnya hanya `http://localhost:3001` menjadi  `http://localhost:3001/api/user`
 update juga untuk  `api testing` sebelumnya hanya `/`  menjadi `/api/user` 
 
