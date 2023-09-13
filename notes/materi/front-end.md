@@ -57,8 +57,8 @@ ref: https://tailwindcss.com/docs/installation/play-cdn
     document.getElementById('dataForm').addEventListener('submit', function (event) {
       event.preventDefault();
 
-      const nama = document.getElementById('nama').value;
-      const umur = document.getElementById('umur').value;
+      const name = document.getElementById('nama').value;
+      const age = document.getElementById('umur').value;
 
       // Ganti URL dengan URL API yang sesuai
       const apiUrl = 'http://localhost:3001/api/user';
@@ -67,9 +67,9 @@ ref: https://tailwindcss.com/docs/installation/play-cdn
       fetch(apiUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',****
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ nama, umur }),
+        body: JSON.stringify({name, age }),
       })
         .then(response => response.json())
         .then(data => {
@@ -85,3 +85,5 @@ ref: https://tailwindcss.com/docs/installation/play-cdn
   </script>
 </body>
 ```
+
+jalankan dengan `npm start`
