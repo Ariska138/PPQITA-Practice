@@ -87,3 +87,6 @@ ref: https://tailwindcss.com/docs/installation/play-cdn
 ```
 
 jalankan dengan `npm start`
+
+TUGAS
+- tambahkan tampilan untuk get, update, dan delete.
