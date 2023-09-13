@@ -29,16 +29,6 @@
 7. jalanin `git commit -m '<pesan>'`
 8. jalanin `git push -u origin <branch>`
 
-## Optional / Saran / Catatan
-
-Mengganti Branch
-`git branch -M main`
-
-Menghapus file
-`git rm file_yang_ingin_dihapus.txt`
-
-Menghapus folder
-`git rm -r folder_yang_ingin_dihapus`
 
 ## Doc
 

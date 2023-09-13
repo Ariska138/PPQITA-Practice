@@ -7,3 +7,5 @@ bagaimana membuat tampilan frontend
 - tambahkan di app.js
   `app.use(express.static('public'));` // Serve static files from the public directory
 - untuk root api ubah dari `/` menjadi `/api` atau lebih spesifik `/api/user`
+
+## buat ui untuk Send data
