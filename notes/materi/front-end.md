@@ -106,4 +106,5 @@ jalankan dengan `npm start`
 TUGAS
 - Tambahkan tampilan untuk get, update, dan delete!
 - Pastikan setiap post, update dan delete. list data juga terupdate!
-- Pastikan
+- Pastikan semua terhubung dengan `rest api` yg telah dibuat
+- pastikan semua `rest api` berjalan dengan baik di `thunder client` atau `testing api`!
