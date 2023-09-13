@@ -112,3 +112,7 @@ TUGAS
 - Pastikan setiap post, update dan delete. list data juga terupdate!
 - Pastikan semua terhubung dengan `rest api` yg telah dibuat
 - pastikan semua `rest api` berjalan dengan baik di `thunder client` atau `testing api`!
+
+referensi tugas
+- https://tailwindcss.com/docs/border-collapse
+- 

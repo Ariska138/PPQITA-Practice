@@ -22,6 +22,7 @@ window.onload = () => {
         .then((data) => {
           // Manipulasi respons dari API sesuai kebutuhan Anda
           console.log('Respon dari API:', data);
+          window.open('/', '_self'); // untuk kembali ke awal / list data
         })
         .catch((error) => {
           console.error('Terjadi kesalahan:', error);
