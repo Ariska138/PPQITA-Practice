@@ -1,8 +1,6 @@
-<head>
-<script src="https://kit.fontawesome.com/a38b3c3354.js" crossorigin="anonymous"></script>
-</head>
 
-# Catatan Express.js <i class="fa-brands fa-node-js"></i>
+# Catatan Express.js ![alt]("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg")
+
 Merangkum semua hal tentang express js
 
 ## ketika run test api, maka konflik pada port
