@@ -68,7 +68,7 @@ ref: https://tailwindcss.com/docs/installation/play-cdn
 ```
 buat file baru dengan nama `script.js` di dalam folder `public`
 ```js
-window.onload = () => {
+window.onload = () => { // dijalankan ketika semua halaman sudah berhasil di tampilkan
   document
     .getElementById('dataForm')
     .addEventListener('submit', function (event) {
