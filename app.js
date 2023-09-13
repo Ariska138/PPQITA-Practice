@@ -8,7 +8,7 @@ const {
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public')); // buat baca suruh isi folder
 
 app.use(express.json()); // agar support json
 /**
