@@ -102,10 +102,12 @@ window.onload = () => { // dijalankan ketika semua halaman sudah berhasil di tam
 
 ```
 
-jalankan dengan `npm start`
+- jalankan dengan `npm start` atai `npm run dev`
+- untuk hasilnya buka `Console` pada browser dengan cara klik kanan pilih `Inspect`
 
 TUGAS
 - Tambahkan tampilan untuk get, update, dan delete!
+- untuk get, bisa dengan tombol atau otomatis berubah ketika ada perubahan data baik itu post, put atau delete.
 - Pastikan setiap post, update dan delete. list data juga terupdate!
 - Pastikan semua terhubung dengan `rest api` yg telah dibuat
 - pastikan semua `rest api` berjalan dengan baik di `thunder client` atau `testing api`!
