@@ -7,7 +7,7 @@ bagaimana membuat tampilan frontend
 - tambahkan di app.js
   `app.use(express.static('public'));` 
   digunakan untuk membaca seluruh folder `public` yang terdapat di `root`
-- pada file `app.js` untuk root api ubah dari `/` menjadi `/api` atau lebih spesifik `/api/user`.
+- pada file `app.js` untuk root api ubah dari `/` menjadi lebih spesifik `/api/user`.
 Contoh:<br>
 dari
 ```js
