@@ -13,15 +13,21 @@ const findByName = (bank, name) => {
 
 const updateData = (bank, id, value) => {
   // mencari index [0,1,2,...]
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
   const index = bank.findIndex((value) => value.id === id);
   // mengubah data berdasarkan id
-  bank[index] = { id, name: value };
+
+  bank[index] = { ...bank[index], id, name: value };
   // mengembalikan seluruh data yg telah diubah
   return bank;
 };
 
 const deleteData = (bank, id) => {
-  const index = bank.findIndex((value) => value.id === id);
+  const index = bank.findIndex((value) => {
+    return value.id === id;
+  });
 
   bank.splice(index, 1);
   return bank;

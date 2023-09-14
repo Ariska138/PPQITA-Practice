@@ -27,6 +27,11 @@ const editNamaData = (id, name) => {
 };
 
 const removeData = (id) => {
+  // ubah ke integer dari string
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
+
   dataMemory = deleteData(dataMemory, id);
 
   return dataMemory;

@@ -28,7 +28,7 @@ window.onload = () => {
       <td class="border border-slate-500">${d.age}</td>
     </tr>`;
         })
-        .join();
+        .join('');
 
       // tampilkan
       elmListData.innerHTML = stringElements;
