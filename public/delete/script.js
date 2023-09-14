@@ -14,7 +14,6 @@ window.onload = () => {
     // siapkan data yg akan dikirim
     const body = JSON.stringify({ id });
 
-    console.log('body: ', body);
     // siapkan fetch untuk mengirim data berupa id yg akan menghapus data tersebut
     try {
       const res = await fetch(apiUrl, {
@@ -27,7 +26,6 @@ window.onload = () => {
 
       const resData = await res.json();
 
-      console.log('resData: ', resData);
       alert('berhasil dihapus');
       window.open('../', '_self');
     } catch (error) {
