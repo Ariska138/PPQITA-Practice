@@ -105,7 +105,7 @@ window.onload = () => { // dijalankan ketika semua halaman sudah berhasil di tam
 - jalankan dengan `npm start` atau `npm run dev`
 - untuk hasilnya buka `Console` pada browser dengan cara klik kanan pilih `Inspect`
 
-TUGAS
+Latihan
 - Tambahkan tampilan untuk get, update, dan delete!
 - untuk get, bisa dengan tombol atau otomatis berubah ketika ada perubahan data baik itu post, put atau delete.
 - buat folder `create`, `edit`, `delete` di folder `public`. pindahkan file untuk post data yaitu `index.html` dan `script.js` ke dalam folder `create`. sedang untuk `get` berada di folder `public`
@@ -115,4 +115,24 @@ TUGAS
 
 referensi tugas
 - https://tailwindcss.com/docs/border-collapse
-- 
+
+
+
+Latihan
+- Bagaimana menampilkan pesan error dengan alert bahwa nama tidak boleh angka? (besan dari backend)
+- Bagaimana ketika terjadi error, tetap di halaman create!
+  - biar tidak ganti halaman, comment dlu `window.open` biar tahu isi dari log
+  - log bagian `data` di `frontEnd`
+  - amati `structure object`
+  - jika kondisi error, tampilkan pesannya lewat `alert`
+    - gunakan `return` agar tidak menjalan baris berikutnya 
+- (opsional)jika tidak ada error, hapus semua log! `(ctrl+shift+F)`
+
+ref: 
+menampilkan validasi yg gagal
+```js
+if (!isNaN(parseInt(name))) {
+    return { error: true, message: 'nama tidak boleh pakai angka' };
+  }
+```
+ke frontend

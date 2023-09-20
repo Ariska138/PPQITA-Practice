@@ -20,6 +20,11 @@ window.onload = () => {
       })
         .then((response) => response.json())
         .then((data) => {
+          console.log(data, 'data');
+          if (data.error) {
+            alert(data.message);
+            return;
+          }
           // Manipulasi respons dari API sesuai kebutuhan Anda
           window.open('/', '_self'); // untuk kembali ke awal / list data
         })
