@@ -26,6 +26,11 @@ window.onload = () => {
 
       const resData = await res.json();
 
+      if (resData.error) {
+        alert(resData.message);
+        return;
+      }
+
       alert('berhasil dihapus');
       window.open('../', '_self');
     } catch (error) {

@@ -31,7 +31,7 @@ window.onload = () => {
       const resData = await res.json();
 
       if (resData.error) {
-        alert('Cek data Anda yg telah dimasukkan');
+        alert(resData.message);
         return;
       }
 

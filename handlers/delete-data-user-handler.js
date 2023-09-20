@@ -1,11 +1,21 @@
 const { removeData } = require('../gateways/memory-storage-gateway');
 
 const deleteDataUserHandler = (req, res) => {
+  if (!req.body || !req.body.id) {
+    res.status(400);
+    return res.send({ error: true, message: 'harap memasukkan id' });
+  }
+
   const id = req.body.id;
+
+  if (id <= 0 || id >= 1000) {
+    res.status(400);
+    return res.send({ error: true, message: 'id harus antara 0 dan 1000' });
+  }
 
   removeData(id);
 
-  res.send({ error: false, messaeg: 'berhasil' });
+  res.send({ error: false, message: 'berhasil' });
 };
 
 module.exports = { deleteDataUserHandler };
