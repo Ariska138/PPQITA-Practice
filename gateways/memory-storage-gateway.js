@@ -3,6 +3,7 @@ const {
   updateData,
   deleteData,
   findByName,
+  updateAllData,
 } = require('../crud/CrudObjects');
 
 let dataMemory = [];
@@ -26,6 +27,12 @@ const editNamaData = (id, name) => {
   return dataMemory;
 };
 
+const editNamaUmurData = (id, name, age) => {
+  dataMemory = updateAllData(dataMemory, id, { name, age });
+
+  return dataMemory;
+};
+
 const removeData = (id) => {
   // ubah ke integer dari string
   if (typeof id === 'string') {
@@ -43,4 +50,5 @@ module.exports = {
   editNamaData,
   removeData,
   getDataByName,
+  editNamaUmurData,
 };

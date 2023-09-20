@@ -4,6 +4,7 @@ const {
   createData,
   deleteData,
   findByName,
+  updateAllData,
 } = require('./CrudObjects');
 describe('Test Crud Objects', () => {
   test('1.when create new object should success', () => {
@@ -77,5 +78,61 @@ describe('Test Crud Objects', () => {
 
     // menampilkan hanya object yg dibutuhkan
     expect(result).toEqual({ id: 1, name: 'samsul' });
+  });
+
+  test('7.when update name should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ];
+
+    let result = updateAllData(bank, 1, { name: 'arifin' });
+
+    expect(result).toEqual([
+      { id: 1, name: 'arifin', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ]);
+  });
+
+  test('8.when update age and name should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ];
+
+    let result = updateAllData(bank, 1, { name: 'arifin', age: 20 });
+
+    expect(result).toEqual([
+      { id: 1, name: 'arifin', age: 20 },
+      { id: 2, name: 'bambang', age: 15 },
+    ]);
+  });
+
+  test('9.when update age and name with many datas should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19, email: 'samsul@test.com' },
+      { id: 2, name: 'bambang', age: 15, email: 'bambang@test.com' },
+    ];
+
+    let result = updateAllData(bank, 1, { name: 'arifin', age: 20 });
+
+    expect(result).toEqual([
+      { id: 1, name: 'arifin', age: 20, email: 'samsul@test.com' },
+      { id: 2, name: 'bambang', age: 15, email: 'bambang@test.com' },
+    ]);
+  });
+
+  test('10.when update name with id is string should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ];
+
+    let result = updateAllData(bank, '1', { name: 'arifin' });
+
+    expect(result).toEqual([
+      { id: 1, name: 'arifin', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ]);
   });
 });

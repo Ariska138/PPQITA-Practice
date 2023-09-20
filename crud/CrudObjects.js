@@ -24,6 +24,25 @@ const updateData = (bank, id, value) => {
   return bank;
 };
 
+// id yg diinputkan bisa string atau number
+const updateAllData = (bank, id, dataBaru) => {
+  // pastikan variable adalah number
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
+  // cari index berdasarkan id
+  const index = bank.findIndex((value) => value.id === id);
+
+  // ubah data bank berdasarkan index
+  bank[index] = { ...bank[index], ...dataBaru }; // data lama direplace dengan data baru
+  // {data} != {...data}
+  // {data} = {data : {a,...}}
+  // {...data} = {a,...}
+  // {id} === {id:id}
+
+  return bank;
+};
+
 const deleteData = (bank, id) => {
   const index = bank.findIndex((value) => {
     return value.id === id;
@@ -33,4 +52,11 @@ const deleteData = (bank, id) => {
   return bank;
 };
 
-module.exports = { createData, findById, updateData, deleteData, findByName };
+module.exports = {
+  createData,
+  findById,
+  updateData,
+  deleteData,
+  findByName,
+  updateAllData,
+};
