@@ -1,4 +1,4 @@
-const { removeData } = require('../gateways/memory-storage-gateway');
+const { removeData, isIdExist } = require('../gateways/memory-storage-gateway');
 
 const deleteDataUserHandler = (req, res) => {
   if (!req.body || !req.body.id) {
@@ -11,6 +11,11 @@ const deleteDataUserHandler = (req, res) => {
   if (id <= 0 || id >= 1000) {
     res.status(400);
     return res.send({ error: true, message: 'id harus antara 0 dan 1000' });
+  }
+
+  if (!isIdExist(id)) {
+    res.status(400);
+    return res.send({ error: true, message: 'id tidak ditemukan' });
   }
 
   removeData(id);

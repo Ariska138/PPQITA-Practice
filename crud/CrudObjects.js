@@ -52,6 +52,23 @@ const deleteData = (bank, id) => {
   return bank;
 };
 
+const checkId = (bank, id) => {
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
+  const index = bank.findIndex((data) => data.id === id);
+
+  // if (index === -1) {
+  //   //tidak ada
+  //   return false;
+  // }
+
+  // return true;
+
+  // atau ikuti yg mudah dipahami
+
+  return index !== -1;
+};
 module.exports = {
   createData,
   findById,
@@ -59,4 +76,5 @@ module.exports = {
   deleteData,
   findByName,
   updateAllData,
+  checkId,
 };

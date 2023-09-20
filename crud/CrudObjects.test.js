@@ -135,4 +135,29 @@ describe('Test Crud Objects', () => {
       { id: 2, name: 'bambang', age: 15 },
     ]);
   });
+
+  test('11.when find id is founded should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ];
+
+    let result = checkId(bank, 1);
+
+    expect(result).toEqual(true);
+    // jangan cek type data, pastikan number
+    // findIndex
+    // jika nilai index adalah -1 (berarti tidak ditemukan)
+  });
+
+  test('12.when find id is not founded should success', () => {
+    let bank = [
+      { id: 1, name: 'samsul', age: 19 },
+      { id: 2, name: 'bambang', age: 15 },
+    ];
+
+    let result = checkId(bank, 4);
+
+    expect(result).toEqual(false);
+  });
 });

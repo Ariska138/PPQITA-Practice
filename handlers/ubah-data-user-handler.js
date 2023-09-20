@@ -1,6 +1,7 @@
 const {
   editNamaData,
   editNamaUmurData,
+  isIdExist,
 } = require('../gateways/memory-storage-gateway');
 const { nameValidation, ageValidation } = require('../validation/validation');
 
@@ -15,6 +16,11 @@ const ubahDataUserHandler = (req, res) => {
 
   if (id <= 0 || id >= 1000) {
     return res.send({ error: true, message: 'id harus antara 0 dan 1000' });
+  }
+
+  if (!isIdExist(id)) {
+    res.status(400);
+    return res.send({ error: true, message: 'id tidak ditemukan' });
   }
 
   let realNameRes = nameValidation(name);
