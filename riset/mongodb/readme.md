@@ -32,6 +32,61 @@ beberapa langkah berikut
 - uji coba url di **MongoDB Compass** (install aplikasi)
 - jika error masalah TSL, silakan atur networking access dan tambahkan IP Anda
 
+### codingan
+- menambahkan package
+  `const { MongoClient } = require('mongodb');`
+
+- membuat koneksi
+  ```js
+  const uri =
+    'mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net/';
+
+  const client = new MongoClient(uri);
+
+  await client.connect();
+
+  ```
+- menyiapkan db dan collection
+
+```js
+  const dbName = 'testing';
+  const collectionName = 'users';
+  const database = client.db(dbName);
+  const collection = database.collection(collectionName);
+```
+- menambahkan data
+
+```js
+const users = [
+    {
+      id: 1,
+      name: 'ariska',
+      age: 20,
+    },
+  ];
+
+  try {
+    const insertManyResult = await collection.insertMany(users);
+
+    console.log(
+      `${insertManyResult.insertedCount} documents successfully inserted.\n`
+    );
+  } catch (err) {
+    console.error(
+      `Something went wrong trying to insert the new documents: ${err}\n`
+    );
+  }
+```
+
+- menutup akses
+
+```js
+ await client.close();
+```
+- buat jalaninnya
+
+`node riset/mongodb/index.js`
+
 ## Ref
 - https://www.w3schools.com/mongodb/mongodb_mongosh_find.php
 
