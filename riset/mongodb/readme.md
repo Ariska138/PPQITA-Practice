@@ -28,7 +28,10 @@ beberapa langkah berikut
 
 ### mambuat datababase mongodb di mongodb.com
 - daftar dan buat db di `mongodb.com` (pilih yg gratis)
-- dapatkan url `mongodb+srv://root:<password>@mydb.axpeswz.mongodb.net/?retryWrites=true&w=majority`
+- dapatkan url `mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net`
 - uji coba url di **MongoDB Compass** (install aplikasi)
 - jika error masalah TSL, silakan atur networking access dan tambahkan IP Anda
+
+## Ref
+- https://www.w3schools.com/mongodb/mongodb_mongosh_find.php
 
