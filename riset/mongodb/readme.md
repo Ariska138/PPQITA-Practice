@@ -86,7 +86,44 @@ const users = [
 - buat jalaninnya
 
 `node riset/mongodb/index.js`
+jika berhasil muncul info
+`1 documents successfully inserted.`
+
+Contoh Query
+- contoh and
+  ```js
+  const query = {
+  $and: [
+    { age: { $gt: 20 } }, // Dokumen harus memiliki umur lebih dari 20
+    { city: "New York" } // Dan dokumen harus memiliki kota New York
+  ]
+};
+  ```
+
+- contoh or
+```js
+const query = {
+  $or: [
+    { age: { $gt: 30 } }, // Dokumen dengan umur lebih dari 30
+    { city: "Los Angeles" } // Atau dokumen dengan kota Los Angeles
+  ]
+};
+```
+-contoh not
+```js
+const query = {
+  age: { $not: { $gt: 25 } } // Dokumen dengan umur yang tidak lebih dari 25
+};
+```
+
+- contoh pencarian
+```js
+const query = {
+  $text: { $search: "MongoDB" } // Mencari dokumen dengan teks "MongoDB"
+};
+```
+
 
 ## Ref
-- https://www.w3schools.com/mongodb/mongodb_mongosh_find.php
+- https://www.w3schools.com/mongodb/mongodb_query_operators.php
 

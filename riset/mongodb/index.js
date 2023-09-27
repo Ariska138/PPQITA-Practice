@@ -1,4 +1,6 @@
 const { MongoClient } = require('mongodb');
+const { insertMany, insertOne } = require('./oprations/ExampleInsert');
+const { findMany, findOne, findOneWith } = require('./oprations/ExampleFind');
 
 async function run() {
   const uri = 'mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net/';
@@ -13,25 +15,11 @@ async function run() {
   const database = client.db(dbName);
   const collection = database.collection(collectionName);
 
-  const users = [
-    {
-      id: 1,
-      name: 'ariska',
-      age: 20,
-    },
-  ];
-
-  try {
-    const insertManyResult = await collection.insertMany(users);
-
-    console.log(
-      `${insertManyResult.insertedCount} documents successfully inserted.\n`
-    );
-  } catch (err) {
-    console.error(
-      `Something went wrong trying to insert the new documents: ${err}\n`
-    );
-  }
+  // await insertMany(collection);
+  // await insertOne(collection);
+  // await findMany(collection);
+  // await findOne(collection);
+  await findOneWith(collection);
 
   await client.close();
 }
