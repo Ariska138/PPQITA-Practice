@@ -1,22 +1,4 @@
-const insertMany = async (collection) => {
-  const users = [
-    {
-      id: 1,
-      name: 'ariska',
-      age: 20,
-    },
-    {
-      id: 2,
-      name: 'hidayat',
-      age: 25,
-    },
-    {
-      id: 3,
-      name: 'samsul',
-      age: 23,
-    },
-  ];
-
+const insertMany = async (collection, users) => {
   try {
     const insertManyResult = await collection.insertMany(users);
 
@@ -30,13 +12,7 @@ const insertMany = async (collection) => {
   }
 };
 
-const insertOne = async (collection) => {
-  const user = {
-    id: 4,
-    name: 'bambang',
-    age: 30,
-  };
-
+const insertOne = async (collection, user) => {
   try {
     const insertManyResult = await collection.insertOne(user);
 

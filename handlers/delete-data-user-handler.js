@@ -1,4 +1,5 @@
-const { removeData, isIdExist } = require('../gateways/memory-storage-gateway');
+// todo 4: diganti dari mongodb gateway
+// const { removeData, isIdExist } = require('../gateways/memory-storage-gateway');
 
 const deleteDataUserHandler = (req, res) => {
   if (!req.body || !req.body.id) {

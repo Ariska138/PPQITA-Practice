@@ -7,7 +7,7 @@ const {
   findWithQuerySpesific,
 } = require('./oprations/ExampleFind');
 const { updateById } = require('./oprations/ExampleUpdate');
-const { deteleById } = require('./oprations/ExampleDelete');
+const { deteleById, deleteById } = require('./oprations/ExampleDelete');
 
 async function run() {
   const uri = 'mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net/';
@@ -22,17 +22,57 @@ async function run() {
   const database = client.db(dbName);
   const collection = database.collection(collectionName);
 
-  const dataRes = await findMany(collection);
+  // @todo 1: menghapus semua data dengan nilai akhir adalah []
+  let dataRes = await findMany(collection);
+  // console.log('dataRes: ', dataRes);
 
-  console.log('data pertama :', dataRes);
+  for (const data of dataRes) {
+    await deleteById(collection, data.id);
+  }
+  let dataRes2 = await findMany(collection);
+  // console.log('dataRes2: ', dataRes2);
 
-  const dataRes2 = await deteleById(collection);
+  // @todo 2: melakukan crud pada data baru
+  let myData = [
+    {
+      id: 1,
+      name: 'mufid',
+      age: 20,
+    },
+    {
+      id: 2,
+      name: 'hidayat',
+      age: 25,
+    },
+    {
+      id: 3,
+      name: 'samsul',
+      age: 23,
+    },
+  ];
 
-  console.log('data respon delete: ', dataRes2);
+  const dataRes3 = await insertMany(collection, myData);
+  const dataRes4 = await updateById(collection, 2, { name: 'shofia' });
+  const dataRes5 = await deleteById(collection, 3);
+  const dataRes6 = await findMany(collection);
 
-  const dataRes3 = await findMany(collection);
-
-  console.log('data respon setelah update: ', dataRes3);
+  console.log('data akhir: ', dataRes6);
+  /** tidak perlu ditulis
+   * data akhir:  [
+  {
+    _id: new ObjectId("6513b168f42071bdfef2176d"),
+    id: 1,
+    name: 'ariska',
+    age: 20
+  },
+  {
+    _id: new ObjectId("6513b168f42071bdfef2176e"),
+    id: 2,
+    name: 'shofia',
+    age: 25
+  }
+]
+   */
 
   await client.close();
 }

@@ -1,6 +1,6 @@
-const deteleById = async (collection) => {
-  const dataRes = collection.deleteOne({ id: 4 });
+const deleteById = async (collection, id) => {
+  const dataRes = collection.deleteOne({ id });
   return dataRes;
 };
 
-module.exports = { deteleById };
+module.exports = { deleteById };

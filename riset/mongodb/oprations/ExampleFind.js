@@ -20,9 +20,9 @@ const findOne = async (collection) => {
   }
 };
 
-const findOneWithQuery = async (collection) => {
+const findOneById = async (collection, id) => {
   try {
-    const dataRes = await collection.findOne({ id: 3 });
+    const dataRes = await collection.findOne({ id });
     return dataRes;
   } catch (err) {
     console.error(
@@ -31,10 +31,13 @@ const findOneWithQuery = async (collection) => {
   }
 };
 
-const findWithQuerySpesific = async (collection) => {
+const findWithQuerySpesific = async (
+  collection,
+  query = { age: { $gt: 24 } }
+) => {
   // ingin mencari siswa yg mimiliki umur 24 tahun
   try {
-    const dataRes = await collection.find({ age: { $gt: 24 } }).toArray();
+    const dataRes = await collection.find(query).toArray();
 
     return dataRes;
   } catch (err) {
@@ -47,6 +50,6 @@ const findWithQuerySpesific = async (collection) => {
 module.exports = {
   findMany,
   findOne,
-  findOneWithQuery,
+  findOneById,
   findWithQuerySpesific,
 };
