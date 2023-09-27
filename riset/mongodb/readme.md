@@ -123,7 +123,12 @@ const query = {
 };
 ```
 
+Jenis Database yg sering/umum digunakan di industri
+- production -> data real/data customer
+- development/stagging -> data testing secara manual, secara structure mirip production
+- testing -> data testing secara otomatis, setelah proses biasanya dihapus
 
 ## Ref
 - https://www.w3schools.com/mongodb/mongodb_query_operators.php
+- https://www.w3schools.com/mongodb/mongodb_update_operators.php
 

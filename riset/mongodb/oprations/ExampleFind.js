@@ -2,11 +2,9 @@ const findMany = async (collection) => {
   try {
     const dataRes = await collection.find().toArray();
 
-    console.log(`findMany documents successfully inserted.\n`, dataRes);
+    return dataRes;
   } catch (err) {
-    console.error(
-      `Something went wrong trying to insert the new documents: ${err}\n`
-    );
+    console.error(`Something went wrong trying to read the documents: ${err}`);
   }
 };
 
@@ -14,35 +12,34 @@ const findOne = async (collection) => {
   try {
     const dataRes = await collection.findOne();
 
-    console.log(`findMany documents successfully inserted.\n`, dataRes);
+    return dataRes;
   } catch (err) {
     console.error(
-      `Something went wrong trying to insert the new documents: ${err}\n`
+      `Something went wrong trying to read the documents: ${err}\n`
     );
   }
 };
 
 const findOneWithQuery = async (collection) => {
   try {
-    const dataRes = await collection.findOne({ age: 25 });
-
-    console.log(`findMany documents successfully inserted.\n`, dataRes);
+    const dataRes = await collection.findOne({ id: 3 });
+    return dataRes;
   } catch (err) {
     console.error(
-      `Something went wrong trying to insert the new documents: ${err}\n`
+      `Something went wrong trying to read the documents: ${err}\n`
     );
   }
 };
 
-const findOneWithQuerySpesific = async (collection) => {
+const findWithQuerySpesific = async (collection) => {
+  // ingin mencari siswa yg mimiliki umur 24 tahun
   try {
+    const dataRes = await collection.find({ age: { $gt: 24 } }).toArray();
 
-    const dataRes = await collection.findOne({ age: { $gt: 20 } });
-
-    console.log(`findMany documents successfully inserted.\n`, dataRes);
+    return dataRes;
   } catch (err) {
     console.error(
-      `Something went wrong trying to insert the new documents: ${err}\n`
+      `Something went wrong trying to read the documents: ${err}\n`
     );
   }
 };
@@ -51,5 +48,5 @@ module.exports = {
   findMany,
   findOne,
   findOneWithQuery,
-  findOneWithQuerySpesific,
+  findWithQuerySpesific,
 };
