@@ -29,7 +29,7 @@ app.put('/api/user', ubahDataUserHandler);
 app.delete('/api/user', deleteDataUserHandler);
 
 // biar bisa running
-const port = 3001;
+const port = 3000;
 
 const server = app.listen(port, () => {
   console.log('Hai Dev, Servermu udah jalan di http://localhost:' + port); // IP:127.0.0.1 -> domain=> localhost
