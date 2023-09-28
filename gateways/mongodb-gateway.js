@@ -5,7 +5,12 @@
 const { MongoClient } = require('mongodb');
 
 const { insertOne } = require('../riset/mongodb/oprations/ExampleInsert');
-const { findMany } = require('../riset/mongodb/oprations/ExampleFind');
+const {
+  findMany,
+  isIdExist,
+} = require('../riset/mongodb/oprations/ExampleFind');
+const { updateById } = require('../riset/mongodb/oprations/ExampleUpdate');
+const { deleteById } = require('../riset/mongodb/oprations/ExampleDelete');
 
 // pengganti memoryData
 let collection;
@@ -56,25 +61,29 @@ const editNamaData = (id, name) => {
   return dataMemory;
 };
 
-const editNamaUmurData = (id, name, age) => {
+const editNamaUmurData = async (id, name, age) => {
   // dataMemory = updateAllData(dataMemory, id, { name, age });
+  await updateById(collection, id, { name, age });
+  const data = findMany(collection);
 
-  return dataMemory;
+  return data;
 };
 
-const isIdExist = (id) => {
-  // return checkId(dataMemory, id);
+const isIdExisted = async (id) => {
+  return await isIdExist(collection, id);
 };
 
-const removeData = (id) => {
+const removeData = async (id) => {
   // ubah ke integer dari string
   if (typeof id === 'string') {
     id = parseInt(id);
   }
 
   // dataMemory = deleteData(dataMemory, id);
+  await deleteById(collection, id);
+  const data = findMany(collection);
 
-  return dataMemory;
+  return data;
 };
 
 module.exports = {
@@ -84,6 +93,6 @@ module.exports = {
   removeData,
   getDataByName,
   editNamaUmurData,
-  isIdExist,
+  isIdExisted,
   connectionDB,
 };

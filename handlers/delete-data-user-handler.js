@@ -1,7 +1,9 @@
 // todo 4: diganti dari mongodb gateway
 // const { removeData, isIdExist } = require('../gateways/memory-storage-gateway');
 
-const deleteDataUserHandler = (req, res) => {
+const { isIdExisted, removeData } = require('../gateways/mongodb-gateway');
+
+const deleteDataUserHandler = async (req, res) => {
   if (!req.body || !req.body.id) {
     res.status(400);
     return res.send({ error: true, message: 'harap memasukkan id' });
@@ -14,12 +16,12 @@ const deleteDataUserHandler = (req, res) => {
     return res.send({ error: true, message: 'id harus antara 0 dan 1000' });
   }
 
-  if (!isIdExist(id)) {
+  if (!isIdExisted(id)) {
     res.status(400);
     return res.send({ error: true, message: 'id tidak ditemukan' });
   }
 
-  removeData(id);
+  await removeData(id);
 
   res.send({ error: false, message: 'berhasil' });
 };
