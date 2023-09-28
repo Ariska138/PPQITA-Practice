@@ -62,6 +62,10 @@ const editNamaData = (id, name) => {
 };
 
 const editNamaUmurData = async (id, name, age) => {
+  // ubah ke integer dari string
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
   // dataMemory = updateAllData(dataMemory, id, { name, age });
   await updateById(collection, id, { name, age });
   const data = await findMany(collection);
@@ -70,6 +74,11 @@ const editNamaUmurData = async (id, name, age) => {
 };
 
 const isIdExisted = async (id) => {
+  // ubah ke integer dari string
+  if (typeof id === 'string') {
+    id = parseInt(id);
+  }
+
   return await isIdExist(collection, id);
 };
 
