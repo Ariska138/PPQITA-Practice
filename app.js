@@ -5,8 +5,11 @@ const { ubahDataUserHandler } = require('./handlers/ubah-data-user-handler');
 const {
   deleteDataUserHandler,
 } = require('./handlers/delete-data-user-handler');
+const { connectionDB } = require('./gateways/mongodb-gateway');
 
 const app = express();
+
+connectionDB();
 
 app.use(express.static('public')); // buat baca suruh isi folder
 
