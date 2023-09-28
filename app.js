@@ -1,6 +1,6 @@
 const express = require('express');
 // const { postDataUserHandler } = require('./handlers/post-data-user-handler');
-// const { getDataUserHandler } = require('./handlers/get-data-user-handler');
+const { getDataUserHandler } = require('./handlers/get-data-user-handler');
 // const { ubahDataUserHandler } = require('./handlers/ubah-data-user-handler');
 // const {
 //   deleteDataUserHandler,
@@ -17,7 +17,7 @@ app.use(express.static('public')); // buat baca suruh isi folder
 //  * res adalah singkatan dari responss yang isinya kita kirim ke client.
 //  * contoh seperti data, json, html, dan codeHTTP (default:200)
 //  */
-// app.get('/api/user', getDataUserHandler);
+app.get('/api/user', getDataUserHandler);
 
 // // membuat data
 // app.post('/api/user', postDataUserHandler);
