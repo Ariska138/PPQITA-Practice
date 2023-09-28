@@ -7,8 +7,10 @@ const { MongoClient } = require('mongodb');
 const { insertOne } = require('../riset/mongodb/oprations/ExampleInsert');
 const { findMany } = require('../riset/mongodb/oprations/ExampleFind');
 
+// pengganti memoryData
 let collection;
 
+// dipanggil di app.js
 const connectionDB = async () => {
   const uri = 'mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net/';
 
@@ -23,17 +25,25 @@ const connectionDB = async () => {
   collection = database.collection(collectionName);
 };
 
+// menambahkan async, trycatch dan await
 const savingData = async (name, age) => {
   try {
     let id = Math.ceil(Math.random() * 1000);
-    insertOne(collection, { id, name, age });
+    await insertOne(collection, { id, name, age });
   } catch (error) {
     console.log('error pada saving data: ', error);
   }
 };
 
-const showAllData = () => {
-  return findMany(collection);
+const showAllData = async () => {
+  let data = [];
+  try {
+    data = await findMany(collection);
+  } catch (error) {
+    console.log('error pada show all data: ', error);
+  } finally {
+    return data;
+  }
 };
 
 const getDataByName = (name) => {
