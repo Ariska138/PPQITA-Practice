@@ -31,6 +31,28 @@ const findOneById = async (collection, id) => {
   }
 };
 
+// inisialisasi
+const isIdExist = async (collection, id) => {
+  try {
+    // proses
+    const dataRes = await collection.findOne({ id });
+    // dataRes jika ada, maka menhasilkan object
+    // dataRes jika tidk ada, maka menhasilkan null
+    let hasil;
+    // proses pengecekan
+    if (id === true) {
+      hasil = true;
+    } else {
+      hasil = false;
+    }
+
+    // delivery
+    return hasil;
+  } catch (error) {
+    console.error('info error is id exist: ', error);
+  }
+};
+
 const findWithQuerySpesific = async (
   collection,
   query = { age: { $gt: 24 } }
@@ -52,4 +74,5 @@ module.exports = {
   findOne,
   findOneById,
   findWithQuerySpesific,
+  isIdExist,
 };

@@ -3,7 +3,7 @@ const { insertMany, insertOne } = require('./oprations/ExampleInsert');
 const {
   findMany,
   findOne,
-  findOneWithQuery,
+  isIdExist,
   findWithQuerySpesific,
 } = require('./oprations/ExampleFind');
 const { updateById } = require('./oprations/ExampleUpdate');
@@ -51,12 +51,19 @@ async function run() {
     },
   ];
 
+  // 1. menyiapkan data
   const dataRes3 = await insertMany(collection, myData);
-  const dataRes4 = await updateById(collection, 2, { name: 'shofia' });
-  const dataRes5 = await deleteById(collection, 3);
-  const dataRes6 = await findMany(collection);
+  // 2. melakukan pengecekan data ketika data ada
+  // await isIdExist(collection, 2);
+  // 3. melakukan pencekan ketika data tidak ada
+  await isIdExist(collection, 4);
 
-  console.log('data akhir: ', dataRes6);
+  // const dataRes3 = await insertMany(collection, myData);
+  // const dataRes4 = await updateById(collection, 2, { name: 'shofia' });
+  // const dataRes5 = await deleteById(collection, 3);
+  // const dataRes6 = await findMany(collection);
+
+  // console.log('data akhir: ', dataRes6);
   /** tidak perlu ditulis
    * data akhir:  [
   {
