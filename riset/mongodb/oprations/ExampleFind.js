@@ -36,18 +36,11 @@ const isIdExist = async (collection, id) => {
   try {
     // proses
     const dataRes = await collection.findOne({ id });
-    // dataRes jika ada, maka menhasilkan object
-    // dataRes jika tidk ada, maka menhasilkan null
-    let hasil;
-    // proses pengecekan
-    if (id === true) {
-      hasil = true;
-    } else {
-      hasil = false;
-    }
+    // dataRes jika ada, maka menhasilkan object = true
+    // dataRes jika tidk ada, maka menhasilkan null = false
 
     // delivery
-    return hasil;
+    return !!dataRes;
   } catch (error) {
     console.error('info error is id exist: ', error);
   }
