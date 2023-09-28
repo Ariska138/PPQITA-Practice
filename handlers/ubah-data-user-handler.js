@@ -37,7 +37,7 @@ const ubahDataUserHandler = async (req, res) => {
       return res.send(realAgeRes);
     }
 
-    editNamaUmurData(id, realNameRes.data, realAgeRes.data);
+    await editNamaUmurData(id, realNameRes.data, realAgeRes.data);
 
     res.send({ error: false, message: 'success' });
   } catch (error) {

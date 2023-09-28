@@ -64,7 +64,7 @@ const editNamaData = (id, name) => {
 const editNamaUmurData = async (id, name, age) => {
   // dataMemory = updateAllData(dataMemory, id, { name, age });
   await updateById(collection, id, { name, age });
-  const data = findMany(collection);
+  const data = await findMany(collection);
 
   return data;
 };
@@ -81,7 +81,7 @@ const removeData = async (id) => {
 
   // dataMemory = deleteData(dataMemory, id);
   await deleteById(collection, id);
-  const data = findMany(collection);
+  const data = await findMany(collection);
 
   return data;
 };
