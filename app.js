@@ -1,4 +1,4 @@
-// const express = require('express');
+const express = require('express');
 // const { postDataUserHandler } = require('./handlers/post-data-user-handler');
 // const { getDataUserHandler } = require('./handlers/get-data-user-handler');
 // const { ubahDataUserHandler } = require('./handlers/ubah-data-user-handler');
@@ -6,9 +6,9 @@
 //   deleteDataUserHandler,
 // } = require('./handlers/delete-data-user-handler');
 
-// const app = express();
+const app = express();
 
-// app.use(express.static('public')); // buat baca suruh isi folder
+app.use(express.static('public')); // buat baca suruh isi folder
 
 // app.use(express.json()); // agar support json
 // /**
@@ -40,8 +40,8 @@
 // module.exports = server;
 
 // Testing
-const express = require('express');
-const app = express();
+// const express = require('express');
+// const app = express();
 const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
