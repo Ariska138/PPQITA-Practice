@@ -34,7 +34,7 @@ async function run() {
   // 2. melakukan pengecekan data ketika data ada
   // await isIdExist(collection, 2);
   // 3. melakukan pencekan ketika data tidak ada
-  const isIdExisted = await isIdExist(collection, 4);
+  const isIdExisted = await isIdExist(collection, 3);
   console.log('isIdExisted: ', isIdExisted);
 
   await client.close();
