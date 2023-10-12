@@ -6,6 +6,8 @@ const uri = 'mongodb+srv://ppqita:santri@ppqitadb.76fharf.mongodb.net/';
 
 let myCollection, myClient;
 
+let isServerDBReady = false;
+
 const initDB = async () => {
   try {
     const { collection, client } = await connectionDB(
@@ -17,6 +19,7 @@ const initDB = async () => {
     myCollection = collection;
     myClient = client;
     console.log('server db berjalan');
+    isServerDBReady = true;
   } catch (error) {
     console.log(error);
   }
@@ -30,9 +33,11 @@ app.use(express.json()); // jika tidak ada maka error 500 Internal Server Error
 
 app.post('/api/user', async (req, res) => {
   try {
+    if (!isServerDBReady) {
+      return res.status(503).send('server db belum siap');
+    }
     console.log(req.body);
 
-    let { name } = req.body;
     const insertManyResult = await myCollection.insertOne(req.body);
 
     console.log(` document successfully inserted.\n`, insertManyResult);
